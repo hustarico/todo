@@ -1,0 +1,255 @@
+:root{
+    --primary:#090040;
+    --bg: #471396;
+    --secondary:#B13BFF;
+    --accent:#FFCC00;
+}
+
+
+*,*::after,*::before{
+    
+    box-sizing: border-box;
+}
+
+
+
+body{
+    min-height: 100dvh;
+    width: 100%;
+
+    margin: 0%;
+    
+    background-color: var(--primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+
+    background-color: var(--bg);
+
+    min-height: 40%;
+    height: fit-content;
+
+
+    /* todo   do this width thingy for this contianer */
+    max-width: 30vw;
+    
+    
+
+    padding: 2rem;
+
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem black;
+}
+
+
+
+.todo-list{
+    list-style-type: none;
+    padding: 0px;
+    
+
+    width: 100%;
+}
+
+.todo{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.todo > p{
+    font-size: 1.5rem;
+    margin: 0px;
+    margin-bottom: 1rem;
+    
+    font-family: "Iceland", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: var(--accent);
+    text-shadow: 0 0 0.5rem var(--accent);
+    
+}
+
+.dashedOut{
+    text-decoration: line-through;
+}
+
+
+h1{
+    /* font-size: clamp(10px,20px,30px); */
+    font-size:  4rem;
+    color: var(--accent);
+    text-shadow: 0 0 0.5rem var(--accent);
+    text-align: center;
+
+
+    margin: 0;
+}
+
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+
+    box-shadow: 0 0 1rem var(--secondary);
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--secondary);
+    box-shadow: 
+        0 0 0.5rem var(--secondary) ,
+        0 0 1rem var(--secondary);
+}
+input[type="checkbox"]:hover {
+    background-color: var(--accent);
+    box-shadow: 
+        0 0 1rem var(--accent) ,
+        0 0 2rem var(--accent);
+    transform: scale(1.3);
+}
+
+
+input[type="text"]{
+    background-color: var(--secondary);
+
+    width: 80%;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: none;
+    outline: none;
+    
+    box-shadow: 0 0 1rem var(--secondary);
+
+    transition: all 0.2s ease-in-out;
+
+    padding: 0.25rem;
+    height: 20px;
+
+
+    color: var(--primary);
+}
+input[type="text"]:hover{
+    background-color: var(--accent);
+    box-shadow: 
+        0 0 0.5rem var(--accent) ,
+        0 0 1rem var(--accent);
+    transform: scale(1.1);
+    border-radius: 1rem;
+
+}
+
+input[type="text"]:focus{
+    box-shadow: 
+        0 0 1rem var(--secondary) ,
+        0 0 2rem var(--secondary);
+}
+
+button[type="submit"]{
+    appearance: none;
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 17%;
+
+    background-color: var(--secondary);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    box-shadow: 0 0 1rem var(--secondary);
+
+    transition: all 0.2s ease-in-out;
+
+    color: var(--primary);
+    
+}
+button[type="submit"]:hover{
+    background-color: var(--accent);
+    box-shadow: 
+        0 0 0.5rem var(--accent) ,
+        0 0 1rem var(--accent);
+    transform: scale(1.1);
+    border-radius: 1rem;
+}
+
+
+/* ? some media queries  */
+
+
+/* ----------- Tablets (768px and below) ----------- */
+@media (max-width: 768px) {
+.container {
+    max-width: 80vw;
+    padding: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.todo > p {
+    font-size: 1.25rem;
+}
+
+input[type="text"] {
+    height: 24px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    height: 24px;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+}
+
+/* ----------- Phones (480px and below) ----------- */
+@media (max-width: 480px) {
+.container {
+    max-width: 95vw;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.todo > p {
+    font-size: 1rem;
+}
+
+input[type="text"] {
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    font-size: 0.9rem;
+}
+}
