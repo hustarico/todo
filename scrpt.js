@@ -57,7 +57,9 @@ function addTask(event){
 
     //? adding child
     let newTodoElement = document.createElement('li');
-    newTodoElement.innerHTML='<div class="todo"><p>'+newTodo.text+'</p><input type="checkbox"></div>';
+    newTodoElement.innerHTML='<div class="todo"><p></p><input type="checkbox"></div>';
+    newTodoElement.querySelector(".todo > p").innerText=('newTodo.text');
+    
 
     //?giving child an event listener
     let newCheck = newTodoElement.firstElementChild.lastElementChild;
