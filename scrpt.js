@@ -28,12 +28,12 @@ function dashOut(){
 
 
 
-    todoArr.forEach(todo =>{
-        console.log(todo);
-        if(todo.text.trim() == siblingText.innerText.trim())
-            todo.done=!todo.done;
-
-    })
+    for (let i = 0; i < todoArr.length; i++) {
+        if (todoArr[i].text.trim() == siblingText.innerText.trim()) {
+            todoArr[i].done = !todoArr[i].done;
+            break;
+        }
+    }
     localStorage.setItem("todos",JSON.stringify(todoArr));
 }
 
